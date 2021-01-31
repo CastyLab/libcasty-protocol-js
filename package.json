@@ -1,6 +1,6 @@
 {
-  "name": "casty-proto",
-  "version": "1.4.3",
+  "name": "libcasty-protocol-js",
+  "version": "0.0.1",
   "description": "This repository contains common protocol definitions for casty services around gRPC such as user, authentication, theater etc...",
   "scripts": {
     "build": "./node_modules/protobufjs/bin/pbjs -t static-module -w commonjs -o bundle.js protofiles/*.proto"
