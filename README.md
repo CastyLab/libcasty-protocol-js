@@ -1,4 +1,4 @@
-# Casty gRPC.proto package
+# Casty protocl package for JavaScript
 This repository contains common protocol definitions for casty services
 around gRPC such as user, authentication, theater etc...
 
