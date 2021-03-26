@@ -6,5 +6,5 @@ option go_package = ".;proto";
 import "grpc.user.proto";
 
 message TheaterMembers {
-    repeated proto.User members = 1;
+  repeated proto.User members = 1;
 }

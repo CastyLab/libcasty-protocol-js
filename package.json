@@ -1,33 +1,41 @@
 {
   "name": "libcasty-protocol-js",
   "version": "0.0.1",
-  "description": "This repository contains common protocol definitions for casty services around gRPC such as user, authentication, theater etc...",
+  "description": "This repository contains common protocol definitions for casty services",
   "scripts": {
-    "build": "./node_modules/protobufjs/bin/pbjs -t static-module -w commonjs -o bundle.js protofiles/*.proto"
+    "build": "npm run build-common-js",
+    "build-common-js": "./node_modules/protobufjs/bin/pbjs -t static-module -w commonjs -o commonjs.js protobuf/*.proto",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CastyLab/libcasty-protocol-js.git"
+    "url": "git+https://github.com/castyapp/libcasty-protocol-js.git"
   },
   "keywords": [
     "websocket",
     "libcasty-protocol-js",
     "protobuf",
     "protobuffers",
-    "casty"
+    "casty",
+    "grpc"
   ],
   "author": {
-    "name": "Alireza Josheghani",
+    "name": "MrJosh",
     "email": "josheghani.dev@gmail.com",
-    "url": "https://github.com/iamalirezaj"
+    "url": "https://github.com/MrJoshLab"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CastyLab/libcasty-protocol-js/issues"
+    "url": "https://github.com/castyapp/libcasty-protocol-js/issues"
   },
-  "homepage": "https://github.com/CastyLab/libcasty-protocol-js#readme",
+  "homepage": "https://github.com/castyapp/libcasty-protocol-js#readme",
   "dependencies": {
-    "google-protobuf": "^3.11.4",
-    "protobufjs": "^6.8.9"
+    "google-protobuf": "^3.15.6",
+    "protobufjs": "^6.10.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-typescript": "^7.13.0",
+    "jest": "^26.6.3"
   }
 }
