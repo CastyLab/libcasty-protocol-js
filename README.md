@@ -7,7 +7,7 @@ we use `/protobuf` directory for our proto files and then we compile them into a
 
 ## Install package
 ```bash
-$ npm i castylib-protocol-js
+$ npm i libcasty-protocol-js
 ```
 
 ## Compile protobuffers
