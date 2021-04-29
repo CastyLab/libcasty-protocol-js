@@ -1,6 +1,6 @@
 {
   "name": "libcasty-protocol-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This repository contains common protocol definitions for casty services",
   "scripts": {
     "build": "npm run build-common-js",
