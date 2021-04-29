@@ -1,6 +1,5 @@
 import {proto} from '../commonjs'
 import {Packet} from '../protocol/packet'
-import {new_protobuf_msg} from '../protocol/protocol';
 
 test('TestPingPongBytesToPacket', () => {
 
@@ -46,7 +45,7 @@ test('LogOnEvent', () => {
   expect(message.password).toBe(payload.password);
   expect(message.token).toBe(payload.token);
 
-  const bytes = new_protobuf_msg(proto.EMSG.LOGON, message)
+  const bytes = Packet.serialize(proto.EMSG.LOGON, message)
   const packet = new Packet(bytes)
   expect(packet.is_proto()).toBe(true)
   expect(packet.emsg).toBe(proto.EMSG.LOGON)
@@ -73,7 +72,7 @@ test('TheaterLogOnEvent', () => {
   expect(message.room).toBe(payload.room);
   expect(message.token).toBe(payload.token);
 
-  const bytes = new_protobuf_msg(proto.EMSG.LOGON, message)
+  const bytes = Packet.serialize(proto.EMSG.LOGON, message)
   const packet = new Packet(bytes)
   expect(packet.is_proto()).toBe(true)
   expect(packet.emsg).toBe(proto.EMSG.LOGON)
@@ -109,7 +108,7 @@ test('ChatMsgEvent', () => {
   expect(message.message).toBe(payload.message);
   expect(message.reciever).toBe(payload.reciever);
 
-  const bytes = new_protobuf_msg(proto.EMSG.NEW_CHAT_MESSAGE, message)
+  const bytes = Packet.serialize(proto.EMSG.NEW_CHAT_MESSAGE, message)
   const packet = new Packet(bytes)
   expect(packet.is_proto()).toBe(true)
   expect(packet.emsg).toBe(proto.EMSG.NEW_CHAT_MESSAGE)
@@ -139,7 +138,7 @@ test('TheaterPlay', () => {
   expect(message.currentTime).toBe(payload.currentTime);
   expect(message.state).toBe(payload.state);
 
-  const bytes = new_protobuf_msg(proto.EMSG.THEATER_PLAY, message)
+  const bytes = Packet.serialize(proto.EMSG.THEATER_PLAY, message)
   const packet = new Packet(bytes)
 
   expect(packet.is_proto()).toBe(true)
@@ -172,7 +171,7 @@ test('TheaterPause', () => {
   expect(message.currentTime).toBe(payload.currentTime);
   expect(message.state).toBe(payload.state);
 
-  const bytes = new_protobuf_msg(proto.EMSG.THEATER_PAUSE, message)
+  const bytes = Packet.serialize(proto.EMSG.THEATER_PAUSE, message)
   const packet = new Packet(bytes)
 
   expect(packet.is_proto()).toBe(true)
